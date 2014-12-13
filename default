@@ -3,7 +3,7 @@ server {
     root /data/www;
   }
   location ~ ^/download($|./*) {
-    rewrite ^/download(.*)$ $1 break;
+    rewrite ^/download(.*)$ /$1 break;
     proxy_pass http://192.168.1.237:6789;
     proxy_redirect     off;
     proxy_set_header Host $host;
